@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイトマップ | 長野県150周年記念</title>
+    <meta name="description" content="長野県150周年記念事業サイトのサイトマップ。サイト内のすべてのページを階層的に整理し、目的のコンテンツを素早く見つけることができます。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <h1>長野県150周年記念事業</h1>
+            <span class="shinshu-tagline">SHINSHU / 信州</span>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-dropdown">
+                    <a href="#about">事業について</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about/purpose/">事業の目的</a></li>
+                        <li><a href="/about/concept/">事業コンセプト</a></li>
+                        <li><a href="/#values">5つの価値</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="/history/">長野県の歩み</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/history/">歴史年表</a></li>
+                        <li><a href="/history/video/">映像アーカイブ</a></li>
+                        <li><a href="/history/periods/">時代別詳細</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="/features/">特集記事</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/features/01/">第1回：自然と環境</a></li>
+                        <li><a href="/features/02/">第2回：風土と文化</a></li>
+                        <li><span style="color: #999;">第3回：コミュニティ（準備中）</span></li>
+                        <li><span style="color: #999;">第4回：学びの伝統（準備中）</span></li>
+                        <li><span style="color: #999;">第5回：産業と技術（準備中）</span></li>
+                    </ul>
+                </li>
+                <li><a href="/projects/">関連事業</a></li>
+                <li><a href="/events/">イベント情報</a></li>
+                <li><a href="/messages/">メッセージ</a></li>
+                <li><a href="/news/">お知らせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="sitemap-page">
+        <!-- ページヘッダー -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <nav class="breadcrumb">
+                    <a href="/">ホーム</a> > <span>サイトマップ</span>
+                </nav>
+                <h1 class="page-title">サイトマップ<span class="en-subtitle">SITEMAP</span></h1>
+                <p class="page-lead">サイト内のすべてのページを階層的に整理しています<br>目的のコンテンツを素早く見つけることができます</p>
+                <div class="sitemap-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">ページ</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">主要セクション</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">随時</span>
+                        <span class="stat-label">更新</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 検索機能 -->
+        <section class="sitemap-search">
+            <div class="content-wrapper">
+                <div class="search-box">
+                    <h2>ページ検索</h2>
+                    <div class="search-form">
+                        <input type="text" id="sitemapSearch" placeholder="ページタイトルやキーワードで検索..." aria-label="サイト内ページ検索">
+                        <button type="button" onclick="searchSitemap()">🔍</button>
+                    </div>
+                    <p class="search-help">例：「歴史」「イベント」「記念式典」など</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- メインサイトマップ -->
+        <section class="sitemap-main">
+            <div class="content-wrapper">
+                <div class="sitemap-grid">
+                    <!-- トップページ -->
+                    <div class="sitemap-section">
+                        <h2 class="section-header">
+                            <span class="section-icon">🏠</span>
+                            <span class="section-title">トップページ</span>
+                        </h2>
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item" data-keywords="トップ ホーム メイン">
+                                <a href="/" class="sitemap-link">
+                                    <span class="page-title">ホーム</span>
+                                    <span class="page-description">長野県150周年記念事業のメインページ</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 事業について -->
+                    <div class="sitemap-section">
+                        <h2 class="section-header">
+                            <span class="section-icon">📋</span>
+                            <span class="section-title">事業について</span>
+                        </h2>
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item" data-keywords="事業 目的 目標 計画">
+                                <a href="/about/purpose/" class="sitemap-link">
+                                    <span class="page-title">事業の目的</span>
+                                    <span class="page-description">150周年記念事業の基本理念と目標</span>
+                                    <span class="page-updated">更新日: 2025-01-10</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="コンセプト 理念 思想">
+                                <a href="/about/concept/" class="sitemap-link">
+                                    <span class="page-title">事業コンセプト</span>
+                                    <span class="page-description">「つなぐ」をテーマとした事業コンセプト</span>
+                                    <span class="page-updated">更新日: 2025-01-10</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 長野県の歩み -->
+                    <div class="sitemap-section">
+                        <h2 class="section-header">
+                            <span class="section-icon">📚</span>
+                            <span class="section-title">長野県の歩み</span>
+                        </h2>
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item" data-keywords="歴史 年表 タイムライン 沿革">
+                                <a href="/history/" class="sitemap-link">
+                                    <span class="page-title">歴史年表</span>
+                                    <span class="page-description">150年間の歩みを詳細な年表で紹介</span>
+                                    <span class="page-updated">更新日: 2025-01-12</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="映像 ビデオ アーカイブ 動画">
+                                <a href="/history/video/" class="sitemap-link">
+                                    <span class="page-title">映像アーカイブ</span>
+                                    <span class="page-description">貴重な歴史映像コレクション</span>
+                                    <span class="page-updated">更新日: 2025-01-12</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="時代 期間 明治 大正 昭和 平成 令和">
+                                <a href="/history/periods/" class="sitemap-link">
+                                    <span class="page-title">時代別詳細</span>
+                                    <span class="page-description">5つの時代に分けた詳細解説</span>
+                                    <span class="page-updated">更新日: 2025-01-13</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item sub-item" data-keywords="明治時代 明治">
+                                <a href="/history/periods/meiji/" class="sitemap-link">
+                                    <span class="page-title">└ 明治時代（1875-1912）</span>
+                                    <span class="page-description">県制施行から近代化への歩み</span>
+                                    <span class="page-updated">更新日: 2025-01-13</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item sub-item" data-keywords="大正時代 大正">
+                                <a href="/history/periods/taisho/" class="sitemap-link">
+                                    <span class="page-title">└ 大正時代（1912-1926）</span>
+                                    <span class="page-description">大正デモクラシーと産業発展</span>
+                                    <span class="page-updated">更新日: 2025-01-13</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item sub-item" data-keywords="昭和時代 昭和">
+                                <a href="/history/periods/showa/" class="sitemap-link">
+                                    <span class="page-title">└ 昭和時代（1926-1989）</span>
+                                    <span class="page-description">激動の時代と復興・発展</span>
+                                    <span class="page-updated">更新日: 2025-01-13</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item sub-item" data-keywords="平成時代 平成">
+                                <a href="/history/periods/heisei/" class="sitemap-link">
+                                    <span class="page-title">└ 平成時代（1989-2019）</span>
+                                    <span class="page-description">グローバル化と地域振興</span>
+                                    <span class="page-updated">更新日: 2025-01-13</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item sub-item" data-keywords="令和時代 令和">
+                                <a href="/history/periods/reiwa/" class="sitemap-link">
+                                    <span class="page-title">└ 令和時代（2019-現在）</span>
+                                    <span class="page-description">新時代への挑戦と展望</span>
+                                    <span class="page-updated">更新日: 2025-01-13</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 特集記事 -->
+                    <div class="sitemap-section">
+                        <h2 class="section-header">
+                            <span class="section-icon">📰</span>
+                            <span class="section-title">特集記事</span>
+                        </h2>
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item" data-keywords="特集 記事 シリーズ">
+                                <a href="/features/" class="sitemap-link">
+                                    <span class="page-title">特集記事シリーズ</span>
+                                    <span class="page-description">5つのテーマで長野県を深掘り</span>
+                                    <span class="page-updated">更新日: 2025-01-14</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item sub-item" data-keywords="自然 環境 生態系">
+                                <a href="/features/01/" class="sitemap-link">
+                                    <span class="page-title">└ 第1回：自然と環境</span>
+                                    <span class="page-description">豊かな自然環境と保護の取り組み</span>
+                                    <span class="page-updated">更新日: 2025-01-14</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item sub-item" data-keywords="風土 文化 伝統">
+                                <a href="/features/02/" class="sitemap-link">
+                                    <span class="page-title">└ 第2回：風土と文化</span>
+                                    <span class="page-description">信州の風土が育んだ文化</span>
+                                    <span class="page-updated">更新日: 2025-01-14</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- イベント・事業 -->
+                    <div class="sitemap-section">
+                        <h2 class="section-header">
+                            <span class="section-icon">🎊</span>
+                            <span class="section-title">イベント・事業</span>
+                        </h2>
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item" data-keywords="イベント 行事 催し物">
+                                <a href="/events/" class="sitemap-link">
+                                    <span class="page-title">イベント情報</span>
+                                    <span class="page-description">県内各地で開催される記念イベント</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="式典 記念式典 セレモニー">
+                                <a href="/ceremony/" class="sitemap-link">
+                                    <span class="page-title">記念式典</span>
+                                    <span class="page-description">150周年記念式典の詳細情報</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="関連事業 プロジェクト">
+                                <a href="/projects/" class="sitemap-link">
+                                    <span class="page-title">関連事業</span>
+                                    <span class="page-description">150周年を記念した各種事業</span>
+                                    <span class="page-updated">更新日: 2025-01-14</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="県史 編さん 史料">
+                                <a href="/history-project/" class="sitemap-link">
+                                    <span class="page-title">長野県史編さん</span>
+                                    <span class="page-description">県史編さん事業の成果と活動</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- メッセージ・お知らせ -->
+                    <div class="sitemap-section">
+                        <h2 class="section-header">
+                            <span class="section-icon">💬</span>
+                            <span class="section-title">メッセージ・お知らせ</span>
+                        </h2>
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item" data-keywords="メッセージ 知事 市長">
+                                <a href="/messages/" class="sitemap-link">
+                                    <span class="page-title">メッセージ</span>
+                                    <span class="page-description">知事・各界からのお祝いメッセージ</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="お知らせ ニュース 最新情報">
+                                <a href="/news/" class="sitemap-link">
+                                    <span class="page-title">お知らせ</span>
+                                    <span class="page-description">最新ニュースと重要なお知らせ</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- サイト機能 -->
+                    <div class="sitemap-section">
+                        <h2 class="section-header">
+                            <span class="section-icon">🔧</span>
+                            <span class="section-title">サイト機能</span>
+                        </h2>
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item" data-keywords="検索 サイト内検索">
+                                <a href="/search/" class="sitemap-link">
+                                    <span class="page-title">サイト内検索</span>
+                                    <span class="page-description">サイト内コンテンツの検索機能</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="アーカイブ 過去記事">
+                                <a href="/archive/" class="sitemap-link">
+                                    <span class="page-title">コンテンツアーカイブ</span>
+                                    <span class="page-description">過去のコンテンツを年別・カテゴリ別に整理</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="お問い合わせ 連絡 フォーム">
+                                <a href="/contact/" class="sitemap-link">
+                                    <span class="page-title">お問い合わせフォーム</span>
+                                    <span class="page-description">ご質問・ご意見をお聞かせください</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 利用規約・ポリシー -->
+                    <div class="sitemap-section">
+                        <h2 class="section-header">
+                            <span class="section-icon">📄</span>
+                            <span class="section-title">利用規約・ポリシー</span>
+                        </h2>
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item" data-keywords="プライバシー 個人情報 保護">
+                                <a href="/privacy/" class="sitemap-link">
+                                    <span class="page-title">プライバシーポリシー</span>
+                                    <span class="page-description">個人情報の取り扱いについて</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="利用規約 使用条件">
+                                <a href="/terms/" class="sitemap-link">
+                                    <span class="page-title">利用規約</span>
+                                    <span class="page-description">サイト利用に関する規約</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                            <li class="sitemap-item" data-keywords="アクセシビリティ 使いやすさ">
+                                <a href="/accessibility/" class="sitemap-link">
+                                    <span class="page-title">アクセシビリティ方針</span>
+                                    <span class="page-description">誰もが使いやすいサイトを目指して</span>
+                                    <span class="page-updated">更新日: 2025-01-15</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">長野県150周年記念事業</div>
+                <p>長野県の豊かな歴史と未来を紡ぐプロジェクト。</p>
+            </div>
+            <div class="footer-col">
+                <h4>事業について</h4>
+                <ul>
+                    <li><a href="/">トップページ</a></li>
+                    <li><a href="/about/purpose/">事業の目的</a></li>
+                    <li><a href="/about/concept/">事業コンセプト</a></li>
+                    <li><a href="/#values">5つの価値</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>コンテンツ</h4>
+                <ul>
+                    <li><a href="/history/">長野県の歩み</a></li>
+                    <li><a href="/features/">特集記事シリーズ</a></li>
+                    <li><a href="/projects/">関連事業</a></li>
+                    <li><a href="/messages/">関係各所からのメッセージ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>イベント・お知らせ</h4>
+                <ul>
+                    <li><a href="/events/">イベント情報</a></li>
+                    <li><a href="/ceremony/">記念式典</a></li>
+                    <li><a href="/news/">お知らせ</a></li>
+                    <li><a href="/history-project/">長野県史編さん</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>お問い合わせ</h4>
+                <p>〒380-8570 長野県長野市大字南長野字幅下692-2</p>
+                <p>電話: 026-XXX-XXXX</p>
+                <p>Email: info@nagano150th.jp</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nagano Prefecture. All rights reserved.</p>
+            <p>
+                <a href="/privacy/">プライバシーポリシー</a> | 
+                <a href="/terms/">利用規約</a> | 
+                <a href="/accessibility/">アクセシビリティ</a> | 
+                <a href="/sitemap/" class="active">サイトマップ</a> | 
+                <a href="/contact/">お問い合わせ</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Sitemap search functionality
+        function searchSitemap() {
+            const searchTerm = document.getElementById('sitemapSearch').value.toLowerCase();
+            const items = document.querySelectorAll('.sitemap-item');
+            
+            items.forEach(item => {
+                const title = item.querySelector('.page-title').textContent.toLowerCase();
+                const description = item.querySelector('.page-description').textContent.toLowerCase();
+                const keywords = item.getAttribute('data-keywords').toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm) || keywords.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    item.style.backgroundColor = searchTerm ? '#fff3cd' : '';
+                } else {
+                    item.style.display = searchTerm ? 'none' : 'block';
+                    item.style.backgroundColor = '';
+                }
+            });
+        }
+
+        // Real-time search
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('sitemapSearch');
+            searchInput.addEventListener('input', searchSitemap);
+            
+            // Clear search on escape
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    this.value = '';
+                    searchSitemap();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サイト内検索 | 長野県150周年記念</title>
+    <meta name="description" content="長野県150周年記念事業サイトの検索機能。キーワードを入力してサイト内のコンテンツを素早く検索できます。">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-brand">
+            <h1>長野県150周年記念事業</h1>
+            <span class="shinshu-tagline">SHINSHU / 信州</span>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-dropdown">
+                    <a href="#about">事業について</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/about/purpose/">事業の目的</a></li>
+                        <li><a href="/about/concept/">事業コンセプト</a></li>
+                        <li><a href="/#values">5つの価値</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="/history/">長野県の歩み</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/history/">歴史年表</a></li>
+                        <li><a href="/history/video/">映像アーカイブ</a></li>
+                        <li><a href="/history/periods/">時代別詳細</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="/features/">特集記事</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/features/01/">第1回：自然と環境</a></li>
+                        <li><a href="/features/02/">第2回：風土と文化</a></li>
+                        <li><a href="/features/03/">第3回：コミュニティ</a></li>
+                        <li><a href="/features/04/">第4回：学びの伝統</a></li>
+                        <li><a href="/features/05/">第5回：産業と技術</a></li>
+                    </ul>
+                </li>
+                <li><a href="/projects/">関連事業</a></li>
+                <li><a href="/events/">イベント情報</a></li>
+                <li><a href="/messages/">メッセージ</a></li>
+                <li><a href="/news/">お知らせ</a></li>
+                <li><a href="/search/" class="active">🔍 検索</a></li>
+                <li><a href="/contact/">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="search-page">
+        <!-- ページヘッダー -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <nav class="breadcrumb">
+                    <a href="/">ホーム</a> > <span>サイト内検索</span>
+                </nav>
+                <h1 class="page-title">サイト内検索<span class="en-subtitle">SITE SEARCH</span></h1>
+                <p class="page-lead">サイト内のコンテンツを素早く検索できます<br>歴史・イベント・記事など豊富なコンテンツからお探しの情報を見つけてください</p>
+            </div>
+        </section>
+
+        <!-- 検索フォーム -->
+        <section class="search-form-section">
+            <div class="content-wrapper">
+                <div class="main-search-box">
+                    <h2>コンテンツ検索</h2>
+                    <form class="search-form" onsubmit="return performSearch(event)">
+                        <div class="search-input-wrapper">
+                            <input type="text" id="searchInput" placeholder="キーワードを入力してください..." aria-label="検索キーワード入力">
+                            <button type="submit" class="search-button">🔍 検索</button>
+                        </div>
+                        <div class="search-options">
+                            <label class="search-option">
+                                <input type="checkbox" id="titleOnly" value="title">
+                                <span>タイトルのみ検索</span>
+                            </label>
+                            <label class="search-option">
+                                <input type="checkbox" id="recentOnly" value="recent">
+                                <span>最新30日以内</span>
+                            </label>
+                        </div>
+                    </form>
+                    
+                    <div class="search-examples">
+                        <h3>検索例</h3>
+                        <div class="example-tags">
+                            <button class="example-tag" onclick="searchExample('歴史')">歴史</button>
+                            <button class="example-tag" onclick="searchExample('イベント')">イベント</button>
+                            <button class="example-tag" onclick="searchExample('記念式典')">記念式典</button>
+                            <button class="example-tag" onclick="searchExample('明治時代')">明治時代</button>
+                            <button class="example-tag" onclick="searchExample('文化')">文化</button>
+                            <button class="example-tag" onclick="searchExample('特集記事')">特集記事</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 検索結果 -->
+        <section class="search-results-section" id="searchResultsSection" style="display: none;">
+            <div class="content-wrapper">
+                <div class="results-header">
+                    <h2 id="resultsTitle">検索結果</h2>
+                    <p id="resultsCount"></p>
+                </div>
+                
+                <div class="results-filters">
+                    <h3>カテゴリ絞り込み</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">すべて</button>
+                        <button class="filter-btn" data-category="history">歴史</button>
+                        <button class="filter-btn" data-category="events">イベント</button>
+                        <button class="filter-btn" data-category="features">特集記事</button>
+                        <button class="filter-btn" data-category="projects">事業</button>
+                        <button class="filter-btn" data-category="news">お知らせ</button>
+                    </div>
+                </div>
+                
+                <div class="search-results" id="searchResults">
+                    <!-- 検索結果がここに表示されます -->
+                </div>
+                
+                <div class="no-results" id="noResults" style="display: none;">
+                    <h3>検索結果が見つかりませんでした</h3>
+                    <p>以下をお試しください：</p>
+                    <ul>
+                        <li>キーワードを変更してみてください</li>
+                        <li>検索オプションを変更してみてください</li>
+                        <li><a href="/sitemap/">サイトマップ</a>から目的のページを探してみてください</li>
+                        <li><a href="/contact/">お問い合わせ</a>からご質問ください</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 人気検索キーワード -->
+        <section class="popular-keywords">
+            <div class="content-wrapper">
+                <h2 class="section-title">人気の検索キーワード<span class="en-subtitle">POPULAR KEYWORDS</span></h2>
+                
+                <div class="keywords-grid">
+                    <div class="keyword-category">
+                        <h3>歴史・文化</h3>
+                        <div class="keyword-list">
+                            <a href="#" onclick="searchExample('明治時代')" class="keyword-link">明治時代</a>
+                            <a href="#" onclick="searchExample('県制施行')" class="keyword-link">県制施行</a>
+                            <a href="#" onclick="searchExample('信州文化')" class="keyword-link">信州文化</a>
+                            <a href="#" onclick="searchExample('伝統芸能')" class="keyword-link">伝統芸能</a>
+                        </div>
+                    </div>
+                    
+                    <div class="keyword-category">
+                        <h3>イベント</h3>
+                        <div class="keyword-list">
+                            <a href="#" onclick="searchExample('記念式典')" class="keyword-link">記念式典</a>
+                            <a href="#" onclick="searchExample('文化フェスティバル')" class="keyword-link">文化フェスティバル</a>
+                            <a href="#" onclick="searchExample('地域イベント')" class="keyword-link">地域イベント</a>
+                            <a href="#" onclick="searchExample('参加申込')" class="keyword-link">参加申込</a>
+                        </div>
+                    </div>
+                    
+                    <div class="keyword-category">
+                        <h3>特集・記事</h3>
+                        <div class="keyword-list">
+                            <a href="#" onclick="searchExample('自然環境')" class="keyword-link">自然環境</a>
+                            <a href="#" onclick="searchExample('特集記事')" class="keyword-link">特集記事</a>
+                            <a href="#" onclick="searchExample('県史編さん')" class="keyword-link">県史編さん</a>
+                            <a href="#" onclick="searchExample('アーカイブ')" class="keyword-link">アーカイブ</a>
+                        </div>
+                    </div>
+                    
+                    <div class="keyword-category">
+                        <h3>地域</h3>
+                        <div class="keyword-list">
+                            <a href="#" onclick="searchExample('長野市')" class="keyword-link">長野市</a>
+                            <a href="#" onclick="searchExample('松本城')" class="keyword-link">松本城</a>
+                            <a href="#" onclick="searchExample('善光寺')" class="keyword-link">善光寺</a>
+                            <a href="#" onclick="searchExample('軽井沢')" class="keyword-link">軽井沢</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 検索のヒント -->
+        <section class="search-tips">
+            <div class="content-wrapper">
+                <h2 class="section-title">検索のコツ<span class="en-subtitle">SEARCH TIPS</span></h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <div class="tip-icon">💡</div>
+                        <h3>キーワードの工夫</h3>
+                        <p>複数のキーワードをスペースで区切って検索すると、より詳細な結果が得られます。</p>
+                        <div class="tip-example">例：「明治時代 産業」</div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-icon">🎯</div>
+                        <h3>カテゴリ絞り込み</h3>
+                        <p>検索結果が多すぎる場合は、カテゴリフィルターを使って絞り込みができます。</p>
+                        <div class="tip-example">歴史・イベント・特集記事など</div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-icon">⏰</div>
+                        <h3>最新情報の検索</h3>
+                        <p>「最新30日以内」オプションで、新しい情報だけを検索できます。</p>
+                        <div class="tip-example">最新のイベント情報など</div>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <div class="tip-icon">📋</div>
+                        <h3>サイトマップの活用</h3>
+                        <p>検索で見つからない場合は、<a href="/sitemap/">サイトマップ</a>から体系的に探すことができます。</p>
+                        <div class="tip-example">全ページの一覧表示</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">長野県150周年記念事業</div>
+                <p>長野県の豊かな歴史と未来を紡ぐプロジェクト。</p>
+            </div>
+            <div class="footer-col">
+                <h4>事業について</h4>
+                <ul>
+                    <li><a href="/">トップページ</a></li>
+                    <li><a href="/about/purpose/">事業の目的</a></li>
+                    <li><a href="/about/concept/">事業コンセプト</a></li>
+                    <li><a href="/#values">5つの価値</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>コンテンツ</h4>
+                <ul>
+                    <li><a href="/history/">長野県の歩み</a></li>
+                    <li><a href="/features/">特集記事シリーズ</a></li>
+                    <li><a href="/projects/">関連事業</a></li>
+                    <li><a href="/messages/">関係各所からのメッセージ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>イベント・お知らせ</h4>
+                <ul>
+                    <li><a href="/events/">イベント情報</a></li>
+                    <li><a href="/ceremony/">記念式典</a></li>
+                    <li><a href="/news/">お知らせ</a></li>
+                    <li><a href="/history-project/">長野県史編さん</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>お問い合わせ</h4>
+                <p>〒380-8570 長野県長野市大字南長野字幅下692-2</p>
+                <p>電話: 026-XXX-XXXX</p>
+                <p>Email: info@nagano150th.jp</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nagano Prefecture. All rights reserved.</p>
+            <p>
+                <a href="/privacy/">プライバシーポリシー</a> | 
+                <a href="/terms/">利用規約</a> | 
+                <a href="/accessibility/">アクセシビリティ</a> | 
+                <a href="/sitemap/">サイトマップ</a> | 
+                <a href="/contact/">お問い合わせ</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // サイト内検索データベース（実際の実装では外部APIやサーバーサイド検索を使用）
+        const searchDatabase = [
+            {
+                title: "事業の目的",
+                url: "/about/purpose/",
+                description: "長野県150周年記念事業の基本理念と目標について説明しています。",
+                category: "about",
+                keywords: ["事業", "目的", "理念", "目標"],
+                date: "2025-01-10"
+            },
+            {
+                title: "事業コンセプト",
+                url: "/about/concept/",
+                description: "「つなぐ」をテーマとした事業コンセプトについて詳しく解説しています。",
+                category: "about",
+                keywords: ["コンセプト", "つなぐ", "理念"],
+                date: "2025-01-10"
+            },
+            {
+                title: "歴史年表",
+                url: "/history/",
+                description: "長野県150年間の歩みを詳細な年表形式で紹介しています。",
+                category: "history",
+                keywords: ["歴史", "年表", "150年", "歩み"],
+                date: "2025-01-12"
+            },
+            {
+                title: "明治時代（1875-1912）",
+                url: "/history/periods/meiji/",
+                description: "県制施行から近代化への歩み、明治時代の長野県の発展について。",
+                category: "history",
+                keywords: ["明治時代", "県制施行", "近代化", "産業発展"],
+                date: "2025-01-13"
+            },
+            {
+                title: "大正時代（1912-1926）",
+                url: "/history/periods/taisho/",
+                description: "大正デモクラシーと産業発展期の長野県について。",
+                category: "history",
+                keywords: ["大正時代", "デモクラシー", "産業発展"],
+                date: "2025-01-13"
+            },
+            {
+                title: "記念式典",
+                url: "/ceremony/",
+                description: "2025年8月21日開催の150周年記念式典の詳細情報。",
+                category: "events",
+                keywords: ["記念式典", "式典", "8月21日", "ホクト文化ホール"],
+                date: "2025-01-15"
+            },
+            {
+                title: "イベント情報",
+                url: "/events/",
+                description: "県内各地で開催される150周年記念イベントの総合案内。",
+                category: "events",
+                keywords: ["イベント", "行事", "記念事業", "参加"],
+                date: "2025-01-15"
+            },
+            {
+                title: "特集記事：自然と環境",
+                url: "/features/01/",
+                description: "長野県の豊かな自然環境とその保護に関する特集記事。",
+                category: "features",
+                keywords: ["特集記事", "自然", "環境", "保護", "生態系"],
+                date: "2025-01-14"
+            },
+            {
+                title: "特集記事：風土と文化",
+                url: "/features/02/",
+                description: "信州の風土が育んだ独特の文化について深掘り解説。",
+                category: "features",
+                keywords: ["特集記事", "風土", "文化", "信州", "伝統"],
+                date: "2025-01-14"
+            },
+            {
+                title: "関連事業",
+                url: "/projects/",
+                description: "150周年を記念した各種関連事業の詳細情報。",
+                category: "projects",
+                keywords: ["関連事業", "プロジェクト", "記念事業"],
+                date: "2025-01-14"
+            },
+            {
+                title: "県史編さん事業",
+                url: "/history-project/",
+                description: "5年間の県史編さん事業の成果と活動報告。",
+                category: "projects",
+                keywords: ["県史", "編さん", "史料", "研究", "成果"],
+                date: "2025-01-15"
+            },
+            {
+                title: "お知らせ",
+                url: "/news/",
+                description: "150周年記念事業に関する最新ニュースと重要なお知らせ。",
+                category: "news",
+                keywords: ["お知らせ", "ニュース", "最新情報", "重要"],
+                date: "2025-01-15"
+            }
+        ];
+
+        function performSearch(event) {
+            event.preventDefault();
+            
+            const query = document.getElementById('searchInput').value.trim();
+            if (!query) {
+                alert('検索キーワードを入力してください');
+                return false;
+            }
+
+            const titleOnly = document.getElementById('titleOnly').checked;
+            const recentOnly = document.getElementById('recentOnly').checked;
+            
+            const results = searchContent(query, titleOnly, recentOnly);
+            displayResults(results, query);
+            
+            document.getElementById('searchResultsSection').style.display = 'block';
+            document.getElementById('searchResultsSection').scrollIntoView({ behavior: 'smooth' });
+            
+            return false;
+        }
+
+        function searchContent(query, titleOnly = false, recentOnly = false) {
+            const keywords = query.toLowerCase().split(' ').filter(k => k.length > 0);
+            
+            return searchDatabase.filter(item => {
+                // 日付フィルター
+                if (recentOnly) {
+                    const itemDate = new Date(item.date);
+                    const thirtyDaysAgo = new Date();
+                    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+                    if (itemDate < thirtyDaysAgo) return false;
+                }
+                
+                // 検索範囲の決定
+                const searchText = titleOnly 
+                    ? item.title.toLowerCase()
+                    : `${item.title} ${item.description} ${item.keywords.join(' ')}`.toLowerCase();
+                
+                // キーワードマッチング
+                return keywords.some(keyword => searchText.includes(keyword));
+            }).map(item => {
+                // スコア計算（タイトルマッチを重視）
+                let score = 0;
+                keywords.forEach(keyword => {
+                    if (item.title.toLowerCase().includes(keyword)) score += 3;
+                    if (item.description.toLowerCase().includes(keyword)) score += 2;
+                    if (item.keywords.some(k => k.toLowerCase().includes(keyword))) score += 1;
+                });
+                
+                return { ...item, score };
+            }).sort((a, b) => b.score - a.score);
+        }
+
+        function displayResults(results, query) {
+            const resultsContainer = document.getElementById('searchResults');
+            const resultsTitle = document.getElementById('resultsTitle');
+            const resultsCount = document.getElementById('resultsCount');
+            const noResults = document.getElementById('noResults');
+            
+            resultsTitle.textContent = `「${query}」の検索結果`;
+            resultsCount.textContent = `${results.length}件見つかりました`;
+            
+            if (results.length === 0) {
+                resultsContainer.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            noResults.style.display = 'none';
+            resultsContainer.style.display = 'block';
+            
+            resultsContainer.innerHTML = results.map(item => `
+                <article class="search-result-item" data-category="${item.category}">
+                    <h3 class="result-title">
+                        <a href="${item.url}">${highlightText(item.title, query)}</a>
+                    </h3>
+                    <p class="result-description">${highlightText(item.description, query)}</p>
+                    <div class="result-meta">
+                        <span class="result-category">${getCategoryName(item.category)}</span>
+                        <span class="result-url">${item.url}</span>
+                        <span class="result-date">更新日: ${formatDate(item.date)}</span>
+                    </div>
+                </article>
+            `).join('');
+            
+            // カテゴリフィルターの設定
+            setupCategoryFilters();
+        }
+
+        function highlightText(text, query) {
+            const keywords = query.split(' ').filter(k => k.length > 0);
+            let highlightedText = text;
+            
+            keywords.forEach(keyword => {
+                const regex = new RegExp(`(${keyword})`, 'gi');
+                highlightedText = highlightedText.replace(regex, '<mark>$1</mark>');
+            });
+            
+            return highlightedText;
+        }
+
+        function getCategoryName(category) {
+            const categoryNames = {
+                'about': '事業について',
+                'history': '歴史',
+                'events': 'イベント',
+                'features': '特集記事',
+                'projects': '関連事業',
+                'news': 'お知らせ'
+            };
+            return categoryNames[category] || category;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+        }
+
+        function setupCategoryFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const resultItems = document.querySelectorAll('.search-result-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // ボタンの状態更新
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 結果のフィルタリング
+                    resultItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        function searchExample(keyword) {
+            document.getElementById('searchInput').value = keyword;
+            performSearch(new Event('submit'));
+        }
+
+        // Enterキーでの検索
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch(e);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
