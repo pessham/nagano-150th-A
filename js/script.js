@@ -157,6 +157,27 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.2
     });
 
+    // ヒーローセクション通過時にアクセシビリティバナーを非表示
+    const heroSection = document.getElementById('hero');
+    const accessibilityBanner = document.getElementById('video-banner');
+    
+    if (heroSection && accessibilityBanner) {
+        const heroObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                    // ヒーローセクションを通過した場合（上にスクロール）
+                    accessibilityBanner.classList.remove('show');
+                    accessibilityBanner.style.display = 'none';
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '0px 0px -100% 0px' // ヒーローセクションが完全に見えなくなったらトリガー
+        });
+        
+        heroObserver.observe(heroSection);
+    }
+
     valueItems.forEach(item => {
         item.style.opacity = 0;
         item.style.transform = 'translateY(30px)';
@@ -223,3 +244,23 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Banner elements not found');
     }
 });
+
+/**
+ * シェアリンクをクリップボードにコピー
+ */
+function copyShareLink() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+        alert('シェアリンクをコピーしました！');
+    }).catch(err => {
+        console.error('コピーに失敗しました: ', err);
+        // フォールバック：テキストエリアを使用
+        const textArea = document.createElement('textarea');
+        textArea.value = url;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('シェアリンクをコピーしました！');
+    });
+}
