@@ -4684,3 +4684,23 @@ footer {
 .article-image:hover img {
     transform: scale(1.02);
 }
+
+
+/* Feature Article Page - H2, H3 left alignment */
+.feature-article-page h2,
+.feature-article-page h3 {
+    text-align: left;
+}
+
+.feature-article-page .section-title {
+    text-align: left;
+}
+
+.feature-article-page .article-lead {
+    text-align: left;
+}
+
+.feature-article-page .article-content p,
+.feature-article-page .section-content p {
+    text-align: left;
+}
