@@ -1511,11 +1511,11 @@ section:nth-of-type(even) { /* 偶数番目のセクション */
     z-index: 0;
 }
 
-.value-item.green::before { background: linear-gradient(45deg, #4CAF50, #2E7D32); }
-.value-item.orange::before { background: linear-gradient(45deg, #FF9800, #EF6C00); }
-.value-item.yellow::before { background: linear-gradient(45deg, #FFD700, #FFA500); }
-.value-item.purple::before { background: linear-gradient(45deg, #9C27B0, #6A1B9A); }
-.value-item.blue::before { background: linear-gradient(45deg, #2196F3, #1565C0); }
+.value-item.green::before { background: #5a8d4f; }
+.value-item.orange::before { background: #ff951f; }
+.value-item.yellow::before { background: #ffd13d; }
+.value-item.purple::before { background: #513f6c; }
+.value-item.blue::before { background: #1063a6; }
 
 .value-item h3 {
     position: relative;
@@ -4633,4 +4633,54 @@ footer {
 .cooperation-content ul li,
 .progress-content ul li {
     text-align: left;
+}
+
+
+/* Feature Article Page - Left-aligned content */
+.feature-article-page .content-wrapper {
+    text-align: left;
+}
+
+.feature-article-page .article-header,
+.feature-article-page .article-toc {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.feature-article-page .article-content p,
+.feature-article-page .article-content li,
+.feature-article-page .section-content p,
+.feature-article-page .section-content li {
+    text-align: left;
+}
+
+/* H3 Enhanced Styling for feature pages */
+.feature-article-page h3,
+.feature-planning-page h3 {
+    color: var(--color-primary-dark) \!important;
+    border-left: 4px solid var(--color-accent-gold);
+    padding-left: var(--spacing-sm);
+    background: linear-gradient(90deg, var(--color-historical-overlay) 0%, transparent 100%);
+    margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+}
+
+
+/* Article Image Styling */
+.article-image {
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.article-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.article-image:hover img {
+    transform: scale(1.02);
 }
