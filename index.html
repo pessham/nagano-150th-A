@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+    
     <!-- 緊急・重要情報アラート（通常は非表示） -->
     <!-- 
     管理者向け操作手順：
@@ -74,7 +77,7 @@
         <button id="close-banner" class="banner-close" aria-label="バナーを閉じる">×</button></p>
     </div>
 
-    <main>
+    <main id="main-content">
         <section id="hero">
             <video src="videos/K_Painting_Video_Generation.mp4" autoplay muted playsinline id="bg-video"></video>
             <div class="hero-text">
@@ -195,42 +198,42 @@
                             <div class="timeline-line"></div>
                             
                             <!-- タイムラインノード -->
-                            <div class="timeline-node" data-year="1876" data-importance="high" style="left: 10%;" tabindex="0" role="button" aria-describedby="detail-1876">
+                            <div class="timeline-node" data-year="1876" data-importance="high" style="left: 10%;" tabindex="0" role="button" aria-describedby="detail-1876" aria-label="1876年の出来事を表示">
                                 <div class="node-marker important"></div>
                                 <span class="node-year">1876</span>
                             </div>
                             
-                            <div class="timeline-node" data-year="1891" data-importance="normal" style="left: 20%;" tabindex="0" role="button" aria-describedby="detail-1891">
+                            <div class="timeline-node" data-year="1891" data-importance="normal" style="left: 20%;" tabindex="0" role="button" aria-describedby="detail-1891" aria-label="1891年の出来事を表示">
                                 <div class="node-marker"></div>
                                 <span class="node-year">1891</span>
                             </div>
                             
-                            <div class="timeline-node" data-year="1908" data-importance="normal" style="left: 30%;">
+                            <div class="timeline-node" data-year="1908" data-importance="normal" style="left: 30%;" tabindex="0" role="button" aria-describedby="detail-1908" aria-label="1908年の出来事を表示">
                                 <div class="node-marker"></div>
                                 <span class="node-year">1908</span>
                             </div>
                             
-                            <div class="timeline-node" data-year="1933" data-importance="normal" style="left: 45%;">
+                            <div class="timeline-node" data-year="1933" data-importance="normal" style="left: 45%;" tabindex="0" role="button" aria-describedby="detail-1933" aria-label="1933年の出来事を表示">
                                 <div class="node-marker"></div>
                                 <span class="node-year">1933</span>
                             </div>
                             
-                            <div class="timeline-node" data-year="1948" data-importance="high" style="left: 55%;">
+                            <div class="timeline-node" data-year="1948" data-importance="high" style="left: 55%;" tabindex="0" role="button" aria-describedby="detail-1948" aria-label="1948年の出来事を表示">
                                 <div class="node-marker important"></div>
                                 <span class="node-year">1948</span>
                             </div>
                             
-                            <div class="timeline-node" data-year="1963" data-importance="normal" style="left: 65%;">
+                            <div class="timeline-node" data-year="1963" data-importance="normal" style="left: 65%;" tabindex="0" role="button" aria-describedby="detail-1963" aria-label="1963年の出来事を表示">
                                 <div class="node-marker"></div>
                                 <span class="node-year">1963</span>
                             </div>
                             
-                            <div class="timeline-node" data-year="1998" data-importance="high" style="left: 80%;" tabindex="0" role="button" aria-describedby="detail-1998">
+                            <div class="timeline-node" data-year="1998" data-importance="high" style="left: 80%;" tabindex="0" role="button" aria-describedby="detail-1998" aria-label="1998年の出来事を表示">
                                 <div class="node-marker important"></div>
                                 <span class="node-year">1998</span>
                             </div>
                             
-                            <div class="timeline-node" data-year="2026" data-importance="high" style="left: 95%;" tabindex="0" role="button" aria-describedby="detail-2026">
+                            <div class="timeline-node" data-year="2026" data-importance="high" style="left: 95%;" tabindex="0" role="button" aria-describedby="detail-2026" aria-label="2026年の出来事を表示">
                                 <div class="node-marker important future"></div>
                                 <span class="node-year">2026</span>
                             </div>
