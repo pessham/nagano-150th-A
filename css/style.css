@@ -1608,19 +1608,19 @@ section:nth-of-type(even) { /* 偶数番目のセクション */
 
 /* 黄色カード - みんなに居場所と出番をつくる */
 .value-item.yellow .value-title-jp {
-    color: #2d2d2d;
+    color: #3a2f1a;
     text-shadow: 1px 1px 3px rgba(255,255,255,0.8), 0px 0px 10px rgba(255,255,255,0.4);
     font-weight: 600;
 }
 
 .value-item.yellow p {
-    color: #2d2d2d;
+    color: #3a2f1a;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.7), 0px 0px 8px rgba(255,255,255,0.3);
     font-weight: 400;
 }
 
 .value-item.yellow .value-title-en {
-    color: #2d2d2d;
+    color: #3a2f1a;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
     font-weight: 500;
 }
